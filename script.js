@@ -17,70 +17,58 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h2><i class="fas fa-wave-square"></i> Шкала электромагнитных волн</h2>
                 <p>Электромагнитные волны - это колебания электрического и магнитного полей, которые распространяются в пространстве. Они отличаются длиной волны и частотой.</p>
                 
-                <div class="spectrum-scale">
+                <div class="spectrum-visual">
                     <h3>Полный спектр ЭМ волн:</h3>
                     
-                    <div class="wave-item">
-                        <div class="wave-color" style="background-color: #7209b7;"></div>
-                        <div class="wave-info">
-                            <strong>Радиоволны</strong>
-                            <div class="wavelength">Длина волны: > 1 мм | Использование: радио, ТВ, сотовая связь</div>
+                    <div class="spectrum-graphic">
+                        <div class="spectrum-line">
+                            <div class="wave-type" data-type="radio">
+                                <div class="wave-bar" style="background-color: #7209b7; width: 180px;"></div>
+                                <span class="wave-label">Радиоволны</span>
+                                <span class="wave-desc">> 1 мм</span>
+                            </div>
+                            <div class="wave-type" data-type="microwave">
+                                <div class="wave-bar" style="background-color: #4361ee; width: 150px;"></div>
+                                <span class="wave-label">Микроволны</span>
+                                <span class="wave-desc">1 мм - 1 м</span>
+                            </div>
+                            <div class="wave-type" data-type="infrared">
+                                <div class="wave-bar" style="background-color: #4cc9f0; width: 120px;"></div>
+                                <span class="wave-label">Инфракрасные</span>
+                                <span class="wave-desc">1 мм - 700 нм</span>
+                            </div>
+                            <div class="wave-type" data-type="visible">
+                                <div class="wave-bar" style="background-color: #ffbd00; width: 90px;"></div>
+                                <span class="wave-label">Видимый свет</span>
+                                <span class="wave-desc">700-400 нм</span>
+                            </div>
+                            <div class="wave-type" data-type="ultraviolet">
+                                <div class="wave-bar" style="background-color: #f8961e; width: 60px;"></div>
+                                <span class="wave-label">Ультрафиолет</span>
+                                <span class="wave-desc">400-10 нм</span>
+                            </div>
+                            <div class="wave-type" data-type="xray">
+                                <div class="wave-bar" style="background-color: #f94144; width: 30px;"></div>
+                                <span class="wave-label">Рентген</span>
+                                <span class="wave-desc">10-0.01 нм</span>
+                            </div>
+                            <div class="wave-type" data-type="gamma">
+                                <div class="wave-bar" style="background-color: #9d4edd; width: 15px;"></div>
+                                <span class="wave-label">Гамма</span>
+                                <span class="wave-desc">< 0.01 нм</span>
+                            </div>
                         </div>
-                        <button class="info-btn" data-wave="radio">Подробнее</button>
+                        <div class="spectrum-legend">
+                            <div class="legend-item"><div class="legend-color" style="background-color: #7209b7;"></div>Длинные волны</div>
+                            <div class="legend-item"><div class="legend-color" style="background-color: #9d4edd;"></div>Короткие волны</div>
+                        </div>
                     </div>
                     
-                    <div class="wave-item">
-                        <div class="wave-color" style="background-color: #4361ee;"></div>
-                        <div class="wave-info">
-                            <strong>Микроволны</strong>
-                            <div class="wavelength">Длина волны: 1 мм - 1 м | Использование: микроволновки, Wi-Fi, радары</div>
+                    <div class="spectrum-info-box">
+                        <div id="selected-wave-info">
+                            <h4><i class="fas fa-mouse-pointer"></i> Нажмите на любой тип волны выше</h4>
+                            <p>Узнайте подробности о каждом виде электромагнитных волн</p>
                         </div>
-                        <button class="info-btn" data-wave="microwave">Подробнее</button>
-                    </div>
-                    
-                    <div class="wave-item">
-                        <div class="wave-color" style="background-color: #4cc9f0;"></div>
-                        <div class="wave-info">
-                            <strong>Инфракрасное излучение</strong>
-                            <div class="wavelength">Длина волны: 1 мм - 700 нм | Использование: пульты ДУ, тепловизоры</div>
-                        </div>
-                        <button class="info-btn" data-wave="infrared">Подробнее</button>
-                    </div>
-                    
-                    <div class="wave-item">
-                        <div class="wave-color" style="background-color: #ffbd00;"></div>
-                        <div class="wave-info">
-                            <strong>Видимый свет</strong>
-                            <div class="wavelength">Длина волны: 700 нм - 400 нм | Использование: зрение, оптика</div>
-                        </div>
-                        <button class="info-btn" data-wave="visible">Подробнее</button>
-                    </div>
-                    
-                    <div class="wave-item">
-                        <div class="wave-color" style="background-color: #f8961e;"></div>
-                        <div class="wave-info">
-                            <strong>Ультрафиолетовое излучение</strong>
-                            <div class="wavelength">Длина волны: 400 нм - 10 нм | Использование: дезинфекция, солярий</div>
-                        </div>
-                        <button class="info-btn" data-wave="ultraviolet">Подробнее</button>
-                    </div>
-                    
-                    <div class="wave-item">
-                        <div class="wave-color" style="background-color: #f94144;"></div>
-                        <div class="wave-info">
-                            <strong>Рентгеновское излучение</strong>
-                            <div class="wavelength">Длина волны: 10 нм - 0.01 нм | Использование: медицина, анализ веществ</div>
-                        </div>
-                        <button class="info-btn" data-wave="xray">Подробнее</button>
-                    </div>
-                    
-                    <div class="wave-item">
-                        <div class="wave-color" style="background-color: #9d4edd;"></div>
-                        <div class="wave-info">
-                            <strong>Гамма-излучение</strong>
-                            <div class="wavelength">Длина волны: < 0.01 нм | Использование: медицина, ядерная физика</div>
-                        </div>
-                        <button class="info-btn" data-wave="gamma">Подробнее</button>
                     </div>
                 </div>
                 
@@ -89,14 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Перемещайте ползунок, чтобы увидеть, как меняются свойства волн:</p>
                     
                     <div class="slider-container">
-                        <label for="wavelength-slider">Длина волны: <span id="wavelength-value">1 м</span></label>
+                        <label for="wavelength-slider">Тип волны: <span id="wavelength-value">Радиоволны</span></label>
                         <input type="range" min="1" max="7" value="1" class="slider" id="wavelength-slider">
-                        <div id="wave-description">Радиоволны - самые длинные волны, используются для связи на большие расстояния.</div>
+                        <div id="wave-description">Самые длинные волны, используются для связи на большие расстояния.</div>
                     </div>
                     
                     <div id="wave-use" class="wave-use-info">
                         <h4>Использование в жизни:</h4>
-                        <p id="use-text">Радио, телевидение, мобильная связь</p>
+                        <p id="use-text">Радио, телевидение, мобильная связь, GPS</p>
                     </div>
                 </div>
                 
@@ -258,49 +246,56 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Словарь для интерактивной шкалы
+    // Данные для волн (интерактивная шкала)
     const waveData = {
         1: {
             name: "Радиоволны",
-            wavelength: "1 м - 10 км",
-            use: "Радио, телевидение, мобильная связь, GPS",
-            description: "Самые длинные волны, могут огибать земную поверхность и распространяться на большие расстояния."
+            wavelength: "> 1 мм",
+            use: "Радио, телевидение, мобильная связь, GPS, Wi-Fi",
+            description: "Самые длинные волны, могут огибать земную поверхность и распространяться на большие расстояния. Безопасны для человека.",
+            color: "#7209b7"
         },
         2: {
             name: "Микроволны",
-            wavelength: "1 мм - 1 м",
+            wavelength: "1 мм - 1 м", 
             use: "Микроволновые печи, Wi-Fi, радары, спутниковая связь",
-            description: "Используются для передачи данных на короткие расстояния и нагрева пищи в микроволновках."
+            description: "Используются для передачи данных на короткие расстояния и нагрева пищи в микроволновках.",
+            color: "#4361ee"
         },
         3: {
             name: "Инфракрасное излучение",
-            wavelength: "700 нм - 1 мм",
+            wavelength: "1 мм - 700 нм",
             use: "Пульты ДУ, тепловизоры, приборы ночного видения",
-            description: "Мы ощущаем его как тепло. Испускается всеми нагретыми телами."
+            description: "Мы ощущаем его как тепло. Испускается всеми нагретыми телами, в том числе человеком.",
+            color: "#4cc9f0"
         },
         4: {
             name: "Видимый свет",
-            wavelength: "400 нм - 700 нм",
-            use: "Зрение, освещение, фотосинтез растений",
-            description: "Единственный диапазон, который видит человеческий глаз. Состоит из цветов радуги."
+            wavelength: "700-400 нм",
+            use: "Зрение, освещение, фотосинтез растений, лазеры",
+            description: "Единственный диапазон, который видит человеческий глаз. Состоит из 7 цветов радуги.",
+            color: "#ffbd00"
         },
         5: {
             name: "Ультрафиолетовое излучение",
-            wavelength: "10 нм - 400 нм",
-            use: "Дезинфекция, солярии, люминесцентные лампы",
-            description: "Вызывает загар, но в больших дозах опасен для кожи и глаз."
+            wavelength: "400-10 нм",
+            use: "Дезинфекция, солярии, люминесцентные лампы, определение подлинности банкнот",
+            description: "Вызывает загар, но в больших дозах опасен для кожи и глаз. Частично задерживается озоновым слоем.",
+            color: "#f8961e"
         },
         6: {
             name: "Рентгеновское излучение",
-            wavelength: "0.01 нм - 10 нм",
-            use: "Медицинская диагностика, анализ кристаллов",
-            description: "Проникает сквозь мягкие ткани, но задерживается костями и металлами."
+            wavelength: "10-0.01 нм", 
+            use: "Медицинская диагностика, анализ кристаллов, безопасность в аэропортах",
+            description: "Проникает сквозь мягкие ткани, но задерживается костями и металлами. В больших дозах опасен.",
+            color: "#f94144"
         },
         7: {
             name: "Гамма-излучение",
             wavelength: "< 0.01 нм",
-            use: "Медицина (лучевая терапия), ядерная физика",
-            description: "Самые короткие и энергичные волны. Возникают при ядерных реакциях."
+            use: "Медицина (лучевая терапия), ядерная физика, стерилизация оборудования",
+            description: "Самые короткие и энергичные волны. Возникают при ядерных реакциях и радиоактивном распаде. Опасны в больших дозах.",
+            color: "#9d4edd"
         }
     };
     
@@ -346,49 +341,88 @@ document.addEventListener('DOMContentLoaded', function() {
         const wavelengthValue = document.getElementById('wavelength-value');
         const waveDescription = document.getElementById('wave-description');
         const useText = document.getElementById('use-text');
+        const waveTypes = document.querySelectorAll('.wave-type');
+        const selectedWaveInfo = document.getElementById('selected-wave-info');
         
         // Обработчик слайдера
         slider.addEventListener('input', function() {
             const value = parseInt(this.value);
             const wave = waveData[value];
             
-            wavelengthValue.textContent = wave.wavelength;
-            waveDescription.textContent = `${wave.name} - ${wave.description}`;
+            wavelengthValue.textContent = wave.name;
+            waveDescription.textContent = wave.description;
             useText.textContent = wave.use;
+            
+            // Подсвечиваем соответствующую волну
+            waveTypes.forEach(wt => wt.classList.remove('selected'));
+            if (waveTypes[value - 1]) {
+                waveTypes[value - 1].classList.add('selected');
+            }
+            
+            addPoints(1); // Небольшие баллы за взаимодействие
+        });
+        
+        // Обработчики кликов на волны
+        waveTypes.forEach((waveType, index) => {
+            waveType.addEventListener('click', function() {
+                const wave = waveData[index + 1];
+                
+                // Обновляем информацию
+                selectedWaveInfo.innerHTML = `
+                    <h4><i class="fas fa-${getWaveIcon(index + 1)}"></i> ${wave.name}</h4>
+                    <p><strong>Длина волны:</strong> ${wave.wavelength}</p>
+                    <p><strong>Описание:</strong> ${wave.description}</p>
+                    <p><strong>Применение:</strong> ${wave.use}</p>
+                `;
+                
+                // Обновляем слайдер
+                slider.value = index + 1;
+                wavelengthValue.textContent = wave.name;
+                waveDescription.textContent = wave.description;
+                useText.textContent = wave.use;
+                
+                // Подсвечиваем выбранную волну
+                waveTypes.forEach(wt => wt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                addPoints(2);
+            });
         });
         
         // Инициализируем начальное состояние
         const initialWave = waveData[1];
-        wavelengthValue.textContent = initialWave.wavelength;
-        waveDescription.textContent = `${initialWave.name} - ${initialWave.description}`;
+        wavelengthValue.textContent = initialWave.name;
+        waveDescription.textContent = initialWave.description;
         useText.textContent = initialWave.use;
+        
+        // Выделяем первую волну
+        if (waveTypes[0]) {
+            waveTypes[0].classList.add('selected');
+        }
         
         // Кнопка добавления баллов
         const addPointsBtn = document.getElementById('add-spectrum-points');
-        addPointsBtn.addEventListener('click', function() {
-            addPoints(10);
-            this.innerHTML = '<i class="fas fa-check"></i> Вы уже изучили эту тему!';
-            this.disabled = true;
-        });
-        
-        // Кнопки "Подробнее"
-        document.querySelectorAll('.info-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const waveType = this.getAttribute('data-wave');
-                const waveNames = {
-                    radio: 'Радиоволны',
-                    microwave: 'Микроволны',
-                    infrared: 'Инфракрасное излучение',
-                    visible: 'Видимый свет',
-                    ultraviolet: 'Ультрафиолетовое излучение',
-                    xray: 'Рентгеновское излучение',
-                    gamma: 'Гамма-излучение'
-                };
-                
-                alert(`Вы выбрали: ${waveNames[waveType]}\n\nПодробную информацию можно найти в учебнике физики для 9 класса или в интернете.`);
-                addPoints(2);
+        if (addPointsBtn) {
+            addPointsBtn.addEventListener('click', function() {
+                addPoints(10);
+                this.innerHTML = '<i class="fas fa-check"></i> Вы уже изучили эту тему!';
+                this.disabled = true;
             });
-        });
+        }
+    }
+    
+    // Функция для получения иконки волны
+    function getWaveIcon(waveIndex) {
+        const icons = [
+            'broadcast-tower',    // Радиоволны
+            'microphone',         // Микроволны
+            'thermometer-half',   // Инфракрасные
+            'sun',                // Видимый свет
+            'radiation',          // Ультрафиолет
+            'x-ray',              // Рентген
+            'atom'                // Гамма
+        ];
+        return icons[waveIndex - 1] || 'wave-square';
     }
     
     // Инициализация зала сотовой связи
@@ -398,29 +432,33 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageInput = document.getElementById('message-input');
         const transmissionResult = document.getElementById('transmission-result');
         
-        sendBtn.addEventListener('click', function() {
-            const message = messageInput.value || 'Привет от 9 класса!';
-            
-            transmissionResult.innerHTML = `
-                <div class="transmission-process">
-                    <p><i class="fas fa-sync-alt fa-spin"></i> Преобразую "${message}" в радиоволны...</p>
-                    <p><i class="fas fa-satellite-dish"></i> Передаю сигнал на вышку связи...</p>
-                    <p><i class="fas fa-broadcast-tower"></i> Сигнал передан на коммутатор...</p>
-                    <p><i class="fas fa-mobile-alt"></i> Сообщение доставлено!</p>
-                    <p class="success-message"><i class="fas fa-check-circle"></i> Ваше сообщение успешно передано с помощью радиоволн!</p>
-                </div>
-            `;
-            
-            addPoints(5);
-        });
+        if (sendBtn && messageInput && transmissionResult) {
+            sendBtn.addEventListener('click', function() {
+                const message = messageInput.value || 'Привет от 9 класса!';
+                
+                transmissionResult.innerHTML = `
+                    <div class="transmission-process">
+                        <p><i class="fas fa-sync-alt fa-spin"></i> Преобразую "${message}" в радиоволны...</p>
+                        <p><i class="fas fa-satellite-dish"></i> Передаю сигнал на вышку связи...</p>
+                        <p><i class="fas fa-broadcast-tower"></i> Сигнал передан на коммутатор...</p>
+                        <p><i class="fas fa-mobile-alt"></i> Сообщение доставлено!</p>
+                        <p class="success-message"><i class="fas fa-check-circle"></i> Ваше сообщение успешно передано с помощью радиоволн!</p>
+                    </div>
+                `;
+                
+                addPoints(5);
+            });
+        }
         
         // Кнопка добавления баллов
         const addPointsBtn = document.getElementById('add-cellular-points');
-        addPointsBtn.addEventListener('click', function() {
-            addPoints(15);
-            this.innerHTML = '<i class="fas fa-check"></i> Вы уже изучили эту тему!';
-            this.disabled = true;
-        });
+        if (addPointsBtn) {
+            addPointsBtn.addEventListener('click', function() {
+                addPoints(15);
+                this.innerHTML = '<i class="fas fa-check"></i> Вы уже изучили эту тему!';
+                this.disabled = true;
+            });
+        }
     }
     
     // Инициализация зала с викториной
@@ -446,56 +484,58 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Кнопка проверки теста
         const checkBtn = document.getElementById('check-quiz-btn');
-        checkBtn.addEventListener('click', function() {
-            score = 0;
-            answered = 0;
-            
-            // Проверяем каждый вопрос
-            document.querySelectorAll('.quiz-question').forEach(question => {
-                const selectedOption = question.querySelector('.quiz-option[data-selected="true"]');
+        if (checkBtn) {
+            checkBtn.addEventListener('click', function() {
+                score = 0;
+                answered = 0;
                 
-                if (selectedOption) {
-                    answered++;
+                // Проверяем каждый вопрос
+                document.querySelectorAll('.quiz-question').forEach(question => {
+                    const selectedOption = question.querySelector('.quiz-option[data-selected="true"]');
                     
-                    if (selectedOption.hasAttribute('data-correct')) {
-                        selectedOption.classList.add('correct');
-                        score++;
-                    } else {
-                        selectedOption.classList.add('incorrect');
-                        // Показываем правильный ответ
-                        const correctOption = question.querySelector('.quiz-option[data-correct="true"]');
-                        if (correctOption) {
-                            correctOption.classList.add('correct');
+                    if (selectedOption) {
+                        answered++;
+                        
+                        if (selectedOption.hasAttribute('data-correct')) {
+                            selectedOption.classList.add('correct');
+                            score++;
+                        } else {
+                            selectedOption.classList.add('incorrect');
+                            // Показываем правильный ответ
+                            const correctOption = question.querySelector('.quiz-option[data-correct="true"]');
+                            if (correctOption) {
+                                correctOption.classList.add('correct');
+                            }
                         }
                     }
+                });
+                
+                // Показываем результат
+                const quizResult = document.getElementById('quiz-result');
+                const pointsEarned = score * 5;
+                
+                if (answered === totalQuestions) {
+                    quizResult.innerHTML = `
+                        <div class="quiz-result">
+                            <h3><i class="fas fa-award"></i> Результаты теста</h3>
+                            <p>Вы ответили на ${score} из ${totalQuestions} вопросов правильно!</p>
+                            <p>Ваша оценка: ${score >= 4 ? '5' : score >= 3 ? '4' : score >= 2 ? '3' : '2'}</p>
+                            <p>Вы заработали <strong>${pointsEarned} баллов</strong>!</p>
+                        </div>
+                    `;
+                    
+                    addPoints(pointsEarned);
+                    checkBtn.disabled = true;
+                    checkBtn.textContent = 'Тест пройден!';
+                } else {
+                    quizResult.innerHTML = `
+                        <div class="quiz-result">
+                            <p class="warning"><i class="fas fa-exclamation-triangle"></i> Ответьте на все вопросы перед проверкой!</p>
+                        </div>
+                    `;
                 }
             });
-            
-            // Показываем результат
-            const quizResult = document.getElementById('quiz-result');
-            const pointsEarned = score * 5;
-            
-            if (answered === totalQuestions) {
-                quizResult.innerHTML = `
-                    <div class="quiz-result">
-                        <h3><i class="fas fa-award"></i> Результаты теста</h3>
-                        <p>Вы ответили на ${score} из ${totalQuestions} вопросов правильно!</p>
-                        <p>Ваша оценка: ${score >= 4 ? '5' : score >= 3 ? '4' : score >= 2 ? '3' : '2'}</p>
-                        <p>Вы заработали <strong>${pointsEarned} баллов</strong>!</p>
-                    </div>
-                `;
-                
-                addPoints(pointsEarned);
-                checkBtn.disabled = true;
-                checkBtn.textContent = 'Тест пройден!';
-            } else {
-                quizResult.innerHTML = `
-                    <div class="quiz-result">
-                        <p class="warning"><i class="fas fa-exclamation-triangle"></i> Ответьте на все вопросы перед проверкой!</p>
-                    </div>
-                `;
-            }
-        });
+        }
     }
     
     // Функция добавления баллов
@@ -556,6 +596,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         .notification {
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
     `;
     document.head.appendChild(style);
