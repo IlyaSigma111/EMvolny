@@ -1,0 +1,502 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+:root {
+    --primary: #4361ee;
+    --secondary: #3a0ca3;
+    --accent: #4cc9f0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --danger: #f87171;
+    --spectrum: #7209b7;
+    --cellular: #2a9d8f;
+    --quiz: #e76f51;
+}
+
+body {
+    background: linear-gradient(135deg, #e0f7fa 0%, #bbdefb 100%);
+    color: var(--dark);
+    min-height: 100vh;
+    padding-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.header-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto 1.2rem;
+}
+
+.conference-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+}
+
+.conference-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Карточки залов */
+.conference-hall-nav {
+    margin-bottom: 3rem;
+}
+
+.conference-hall-nav h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary);
+    font-size: 1.8rem;
+}
+
+.hall-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hall-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.8rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-top: 5px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hall-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+#spectrum-hall {
+    border-top-color: var(--spectrum);
+}
+
+#cellular-hall {
+    border-top-color: var(--cellular);
+}
+
+#quiz-hall {
+    border-top-color: var(--quiz);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.spectrum-icon {
+    color: var(--spectrum);
+}
+
+.cellular-icon {
+    color: var(--cellular);
+}
+
+.quiz-icon {
+    color: var(--quiz);
+}
+
+.hall-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.hall-card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.enter-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+}
+
+.enter-btn:hover {
+    background: var(--secondary);
+    transform: scale(1.03);
+}
+
+/* Активный зал */
+.active-hall {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    min-height: 400px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.welcome-message h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.tip {
+    background: #e3f2fd;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent);
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+/* Содержимое залов (будет заполняться JS) */
+.hall-content h2 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.5rem;
+}
+
+.spectrum-scale {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.wave-item {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.wave-item:hover {
+    transform: translateX(5px);
+}
+
+.wave-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.wave-info {
+    flex-grow: 1;
+}
+
+.wavelength {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.2rem;
+}
+
+/* Интерактивные элементы */
+.interactive-demo {
+    background: #e8f4fc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.slider-container {
+    margin: 1.5rem 0;
+}
+
+.slider-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.slider {
+    width: 100%;
+    height: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #7209b7, #4361ee, #4cc9f0, #fbbf24, #e76f51);
+    border-radius: 5px;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--secondary);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Факты */
+.additional-info {
+    margin-top: 3rem;
+}
+
+.additional-info h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+}
+
+.fact-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.fact-icon {
+    font-size: 1.8rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+}
+
+/* Кнопки */
+.back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Футер */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hall-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .conference-info {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    
+    .back-btn {
+        bottom: 10px;
+        left: 10px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hall-content {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Стили для викторины */
+.quiz-question {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.quiz-option {
+    padding: 1rem;
+    background: #f1f8ff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.quiz-option:hover {
+    background: #e3f2fd;
+    transform: translateX(5px);
+}
+
+.quiz-option.correct {
+    background: #d4edda;
+    border-color: var(--success);
+}
+
+.quiz-option.incorrect {
+    background: #f8d7da;
+    border-color: var(--danger);
+}
+
+.quiz-result {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+/* Стили для визуализации связи */
+.connection-visualization {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f0f7ff;
+    border-radius: 10px;
+}
+
+.phone, .tower {
+    font-size: 3rem;
+    color: var(--cellular);
+}
+
+.wave-animation {
+    flex-grow: 1;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    animation: waveMove 2s infinite linear;
+}
+
+@keyframes waveMove {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
