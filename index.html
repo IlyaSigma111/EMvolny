@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конференция: Шкала ЭМ волн и сотовая связь</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-satellite-dish"></i> Конференция по физике</h1>
+            <h2>Шкала электромагнитных волн и сотовая связь</h2>
+            <p class="subtitle">Интерактивный урок для 9 класса</p>
+            <div class="conference-info">
+                <span><i class="fas fa-user"></i> Ученик 9 класса</span>
+                <span><i class="fas fa-star"></i> Баллы: <span id="knowledge-points">0</span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Секция навигации по залам конференции -->
+            <section class="conference-hall-nav">
+                <h2><i class="fas fa-door-open"></i> Выберите секцию конференции:</h2>
+                <div class="hall-cards">
+                    <div class="hall-card" id="spectrum-hall">
+                        <div class="card-icon spectrum-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Шкала ЭМ волн</h3>
+                        <p>Исследуйте виды электромагнитных волн от радиоволн до гамма-лучей</p>
+                        <button class="enter-btn" data-hall="spectrum">Начать изучение</button>
+                    </div>
+                    
+                    <div class="hall-card" id="cellular-hall">
+                        <div class="card-icon cellular-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Сотовая связь</h3>
+                        <p>Узнайте, как работают мобильные телефоны и вышки сотовой связи</p>
+                        <button class="enter-btn" data-hall="cellular">Начать изучение</button>
+                    </div>
+                    
+                    <div class="hall-card" id="quiz-hall">
+                        <div class="card-icon quiz-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>Проверь себя</h3>
+                        <p>Тест по теме конференции для закрепления знаний</p>
+                        <button class="enter-btn" data-hall="quiz">Пройти тест</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Активный зал (динамически меняется) -->
+            <section id="active-hall" class="active-hall">
+                <div class="welcome-message">
+                    <h2><i class="fas fa-hand-wave"></i> Добро пожаловать на конференцию!</h2>
+                    <p>Выберите секцию выше, чтобы начать изучение темы.</p>
+                    <p class="tip"><i class="fas fa-lightbulb"></i> Совет: Начните с "Шкалы ЭМ волн", затем перейдите к "Сотовой связи"</p>
+                </div>
+            </section>
+
+            <!-- Дополнительная информация -->
+            <section class="additional-info">
+                <h3><i class="fas fa-info-circle"></i> Интересные факты</h3>
+                <div class="facts-container">
+                    <div class="fact-card">
+                        <i class="fas fa-wifi fact-icon"></i>
+                        <p>Wi-Fi использует те же радиоволны, что и микроволновки, но в 100 000 раз меньше мощности!</p>
+                    </div>
+                    <div class="fact-card">
+                        <i class="fas fa-sun fact-icon"></i>
+                        <p>Солнце излучает все виды электромагнитных волн, но к Земле доходят в основном видимый свет, ИК и УФ.</p>
+                    </div>
+                    <div class="fact-card">
+                        <i class="fas fa-tower-cell fact-icon"></i>
+                        <p>Вышка сотовой связи обычно обслуживает одновременно до 2000 звонков!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Кнопка возврата -->
+    <button id="back-to-halls" class="back-btn">
+        <i class="fas fa-arrow-left"></i> К выбору секций
+    </button>
+
+    <footer>
+        <div class="footer-content">
+            <p>Интерактивный урок-конференция по физике для 9 класса</p>
+            <p>Тема: "Шкала электромагнитных волн. Использование ЭМ волн для сотовой связи"</p>
+            <p class="copyright">© 2023 | Сделано для урока физики</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
